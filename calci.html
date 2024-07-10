@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .parent{
+            width: 500px;
+            height: 500pxpx;
+            border: 2px solid;
+            background-color: rgb(255, 255, 255);
+        }
+        .input{
+            width: 490px;
+            height: 50px;
+            margin-left: 1px;
+            text-align: right;
+            margin-top: 3px;
+            font-size: 30px;
+        }
+        .but{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 4px;
+            margin-top: 10px;
+        }
+        .but>button{
+            width: 120px;
+            height: 120px;
+            color: gre;
+            border: none;
+            border-radius: 50px;
+            font-size: 30px;
+            background-color: aqua;
+        }
+        .but>button:hover{
+            background-color: rgb(103, 245, 245);
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <input class="input" id="inp" type="text" placeholder="0">
+        <div class="but" id="butt">
+            <button onclick="cdisp()">AC</button>
+            <button onclick="de()">Del</button>
+            <button onclick="adisp('%')">%</button>
+            <button onclick="adisp('/')">/</button>
+            <button onclick="adisp(7)">7</button>
+            <button onclick="adisp(8)">8</button>
+            <button onclick="adisp(9)">9</button>
+            <button onclick="adisp('*')">*</button>
+            <button onclick="adisp(4)">4</button>
+            <button onclick="adisp(5)">5</button>
+            <button onclick="adisp(6)">6</button>
+            <button onclick="adisp('-')">-</button>
+            <button onclick="adisp(3)">3</button>
+            <button onclick="adisp(2)">2</button>
+            <button onclick="adisp(1)">1</button>
+            <button onclick="adisp('+')">+</button>
+            <button onclick="adisp(0)">0</button>
+            <button onclick="adisp('00')">00</button>
+            <button onclick="adisp('.')">.</button>
+            <button onclick="(calculate())">=</button>
+        </div>
+    </div>
+    <script>
+        var disp = document.getElementById("inp")
+        function adisp(value){
+            disp.value += value;
+        }
+        function cdisp(){
+            disp.value="";        
+        }
+        function calculate(){
+            var equ = disp.value
+            disp.value=eval(equ)
+        }
+        function de(){
+            var equ = disp.value
+            equ=equ.slice(0,equ.length -1)
+            disp.value = equ
+        }
+    </script>
+</body>
+</html>

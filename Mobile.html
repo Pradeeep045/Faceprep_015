@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            border: none;
+            font-size: 15px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5px;
+        }
+
+        .row1 {
+            width: 20px;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .keys {
+            width: 20px;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 2px;
+        }
+
+        .row2 {
+            width: 20px;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 2px;
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+
+        .row3 {
+            width: 20px;
+            height: 20px;
+            margin-top: 5px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 2px;
+        }
+
+        .input>input {
+            width: 190px;
+            margin-left: 15px;
+        }
+
+        button:hover {
+            background-color: rgb(207, 202, 202);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="input">
+            <input id="input" type="text">
+        </div>
+        <div id="keyss">
+            <div class="row1">
+                <button onclick="adisp(1)">1</button>
+                <button onclick="adisp('2')">2</button>
+                <button onclick="adisp('3')">3</button>
+                <button onclick="adisp('4')">4</button>
+                <button onclick="adisp('5')">5</button>
+                <button onclick="adisp('6')">6</button>
+                <button onclick="adisp('7')">7</button>
+                <button onclick="adisp('8')">8</button>
+                <button onclick="adisp('9')">9</button>
+                <button onclick="adisp('0')">0</button>
+            </div>
+            <div class="keys">
+                <button onclick="adisp('q')">q</button>
+                <button onclick="adisp('w')">w</button>
+                <button onclick="adisp('e')">e</button>
+                <button onclick="adisp('r')">r</button>
+                <button onclick="adisp('r')">t</button>
+                <button onclick="adisp('y')">y</button>
+                <button onclick="adisp('u')">u</button>
+                <button onclick="adisp('i')">i</button>
+                <button onclick="adisp('o')">o</button>
+                <button onclick="adisp('p')">p</button>
+            </div>
+            <div class="row2">
+                <button onclick="adisp('a')">a</button>
+                <button onclick="adisp('s')">s</button>
+                <button onclick="adisp('d')">d</button>
+                <button onclick="adisp('f')">f</button>
+                <button onclick="adisp('g')">g</button>
+                <button onclick="adisp('h')">h</button>
+                <button onclick="adisp('j')">j</button>
+                <button onclick="adisp('k')">k</button>
+                <button onclick="adisp('l')">l</button>
+            </div>
+            <div class="row3">
+                <button onclick="">#</button>
+                <button onclick="adisp('z')">z</button>
+                <button onclick="adisp('x')">x</button>
+                <button onclick="adisp('c')">c</button>
+                <button onclick="adisp('v')">v</button>
+                <button onclick="adisp('b')">t</button>
+                <button onclick="adisp('n')">n</button>
+                <button onclick="adisp('m')">m</button>
+                <button onclick="de()">del</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var disp = document.getElementById("input")
+        // disp.value = ""
+        function adisp(value){
+            disp.value += value;
+        }
+        function de(){
+            var equ = disp.value
+            equ=equ.slice(0,equ.length -1)
+            disp.value = equ
+        }
+    </script>
+</body>
+</html>
